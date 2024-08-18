@@ -1,0 +1,110 @@
+/* PC */
+@media (min-width: 992px) {
+  .mobile-header {
+    display: none;
+  }
+}
+
+/* Máy tính bảng 7 mobile */
+@media (max-width: 991.98px) {
+  /*1. ẩn navbar */
+  .navbar {
+    display: none;
+  }
+  /*2. chuyển logo vào giữa */
+  .header-top {
+    position: relative;
+  }
+  .header__logo {
+    position: absolute;
+    left: 50%;
+    translate: -50% -50%;
+  }
+
+  /*3. căn lại vị trí menu icon */
+  .menu-header__icon {
+    position: absolute;
+    top: 38px;
+    left: 26px;
+    color: #fff;
+    width: 24px;
+  }
+
+  /* 4. overlay */
+  .menu-overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    /* inset 0 để cách 0 4 hướng */
+    inset: 0;
+    /* để nó dc ưu tiên hơn ko bị các phần tử khác chèn lên */
+    z-index: 1;
+    /* bình thường ẩn overlay đi */
+    /* opacity để nó trong suốt */
+    /* visibility để nó ẩn hoản toàn và có thể tương tác vs các phần tử sau nó */
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+
+  /* 5. kiểm tra nếu checkbox dc check thì hiện overlay */
+  .menu-checkbox:checked ~ .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* 6. code cho menu drawer */
+  .menu-drawer {
+    position: fixed;
+    background-color: #081530;
+    inset: 0 40% 0 0;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    padding: 60px;
+  }
+
+  /* 7. nếu checkbox dc check thì hiện lại menu */
+  .menu-checkbox:checked ~ .menu-drawer {
+    transform: translateX(0);
+  }
+
+  /* 8. menu top */
+  .close__menu {
+    width: 24px;
+    color: #fff;
+  }
+
+  .menu-drawer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #navbar__list--mobile {
+    margin-top: 25px;
+  }
+
+  .navbar__link {
+    display: block;
+    font-size: 2rem;
+  }
+
+  .navbar__link:hover {
+    background-color: #00ffff37;
+  }
+}
+
+/* table */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* mobile */
+@media (max-width: 767.98px) {
+}
+
+/* tạm ẩn phần ko liên quan */
+.hero,
+main,
+.footer {
+  display: none;
+}
